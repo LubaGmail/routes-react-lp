@@ -9,6 +9,7 @@ const MeetupList = (props) => {
       {props.data.map((el, i) => {
         return (
           <MeetupItem
+            key={el.id}
             id={el.id}
             image={el.image}
             title={el.title}
