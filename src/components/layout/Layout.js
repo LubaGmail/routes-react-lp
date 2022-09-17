@@ -6,10 +6,7 @@ import MainNav from './MainNav';
 const Layout = (props) => {
   return (
     <div className={classes.Layout}>
-      <MainNav />
-      <main>
-          {props.children}
-      </main>
+      <main>{props.children}</main>
     </div>
   );
 };
