@@ -19,7 +19,7 @@ const NewMeetup = (props) => {
       desc: descRef.current.value,
     };
 
-    console.log('record', meetupRecord);
+    props.onAddMeetup(meetupRecord);
   };
 
   const resetHandler = (event) => {
@@ -42,7 +42,10 @@ const NewMeetup = (props) => {
 
         <div className={classes.control}>
           <label htmlFor="image">Image</label>
-          <input type="url" id="image" name="image" required ref={imageRef} />
+          <input 
+            // type="url" 
+            type='text'
+            id="image" name="image" required ref={imageRef} />
         </div>
 
         <div className={classes.control}>

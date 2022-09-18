@@ -2,10 +2,13 @@ import React from 'react';
 
 import NewMeetupForm from '../components/meetups/NewMeetupForm';
 
-const NewMeetup = () => {
+const NewMeetup = (props) => {
+  const addMeetup = (meetupRecord) => {
+    console.log('record', meetupRecord);
+  };
   return (
     <div>
-      <NewMeetupForm />
+      <NewMeetupForm onAddMeetup={addMeetup} />
     </div>
   );
 };
