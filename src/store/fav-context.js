@@ -5,7 +5,7 @@ const FavContext = createContext({
   totalFavorites: 0,
   addFavorite: (favorite) => {},
   removeFavorite: (meetupId) => {},
-  itemIsFavorite: (meetupId) => {},
+  isFavorite: (meetupId) => {},
 });
 
 export function FavContextProvider(props) {
@@ -18,7 +18,7 @@ export function FavContextProvider(props) {
   }
 
   function removeFavorite(meetupId) {
-    setFavorites((prevUserFavorites) => {
+    setUserFavorites((prevUserFavorites) => {
       return prevUserFavorites.filter((meetup) => meetup.id !== meetupId);
     });
   }
@@ -32,13 +32,11 @@ export function FavContextProvider(props) {
     totalFavorites: userFavorites.length,
     addFavorite: addFavorite,
     removeFavorite: removeFavorite,
-    itemIsFavorite: isFavorite,
+    isFavorite: isFavorite,
   };
 
   return (
-    <FavoritesContext.Provider value={context}>
-      {props.children}
-    </FavoritesContext.Provider>
+    <FavContext.Provider value={context}>{props.children}</FavContext.Provider>
   );
 }
 
