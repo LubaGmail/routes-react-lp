@@ -36,7 +36,9 @@ export function FavContextProvider(props) {
   };
 
   return (
-    <FavContext.Provider value={context}>{props.children}</FavContext.Provider>
+    <FavContext.Provider value={context}>
+      {props.children}
+    </FavContext.Provider>
   );
 }
 
