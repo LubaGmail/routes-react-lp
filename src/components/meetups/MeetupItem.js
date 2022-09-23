@@ -12,14 +12,13 @@ const MeetupItem = (props) => {
     if (isFavorite) {
       favContext.removeFavorite(props.id);
     } else {
-      const obj = {
+      favContext.addFavorite({
         id: props.id,
-        image: props.image,
         title: props.title,
-        address: props.address,
         description: props.description,
-      }
-      favContext.addFavorite(obj)
+        image: props.image,
+        address: props.address,
+      });
     }
   };
 
