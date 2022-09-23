@@ -24,7 +24,7 @@ const AllMeetups = () => {
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log('AllMeetups.fetch error', error);
+        console.error('Error:', error);
       });
   }, []);
 
